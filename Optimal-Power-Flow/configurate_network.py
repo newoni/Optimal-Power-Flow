@@ -148,5 +148,7 @@ class Network_configuration:
         self.create_cost_function()
 
     def save_network(self):
+        pp.runpp(self.net, algorithm='nr', calculate_voltage_angles='auto', max_iteration=100)
+
         with open("network_data",'wb') as fr:
             pickle.dump(self.net, fr)
